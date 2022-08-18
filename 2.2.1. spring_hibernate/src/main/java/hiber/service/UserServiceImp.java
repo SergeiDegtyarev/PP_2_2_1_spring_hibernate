@@ -15,6 +15,11 @@ public class UserServiceImp implements UserService {
 
    private UserDao userDao;
 
+   @Autowired
+   public UserServiceImp(UserDao userDao) {
+      this.userDao = userDao;
+   }
+
 
    @Override
    public void add(User user) {
@@ -32,8 +37,5 @@ public class UserServiceImp implements UserService {
       return userDao.getUserCar(model,series);
    }
 
-   @Autowired
-   public void setUserDao(UserDao userDao) {
-      this.userDao = userDao;
-   }
+
 }
